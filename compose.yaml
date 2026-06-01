@@ -1,4 +1,12 @@
 services:
+    phpmyadmin:
+        image: 'phpmyadmin:latest'
+        ports:
+            - '8080:80'
+        environment:
+            PMA_HOST: mysql
+        networks:
+            - sail
     laravel.test:
         build:
             context: './vendor/laravel/sail/runtimes/8.5'
